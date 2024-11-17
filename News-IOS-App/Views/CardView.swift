@@ -5,37 +5,56 @@ struct CardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
             if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(height: 150)
-                        .clipped()
-                        .cornerRadius(10)
-                    Text(article.title)
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                        .lineLimit(2)
+                ZStack(alignment: .bottom) {
+                
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 150)
+                            .clipped()
+                            .cornerRadius(10)
+                    } placeholder: {
+                        Color.gray.opacity(0.3)
+                            .frame(height: 150)
+                            .cornerRadius(10)
+                    }
                     
-               
-                    Text(article.description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .lineLimit(3)
-                } placeholder: {
-                    Color.gray.opacity(0.3)
-                        .frame(height: 150)
-                        .cornerRadius(10)
+                   
+                    VStack {
+             
+                        Text(article.title)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .lineLimit(1)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.black.opacity(0.6))
+                            .cornerRadius(8)
+                            .padding(.top, 8)
+                        
+        
+                        
+                       
+                        Text(article.description)
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .lineLimit(2)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.black.opacity(0.6))
+                            .cornerRadius(8)
+                            .padding(.bottom, 8)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
                 }
             } else {
-               
+            
                 Color.gray.opacity(0.3)
-                    .frame(height: 150)
+                    .frame(height: 250)
                     .cornerRadius(10)
             }
-          
         }
         .padding()
         .background(Color(.systemBackground))
@@ -46,7 +65,6 @@ struct CardView: View {
 }
 
 #Preview {
-    
     let sampleSource = Source(id: "1", name: "The Wall Street Journal")
     let sampleArticle = Article(
         id: 1,
