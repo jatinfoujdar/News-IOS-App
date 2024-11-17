@@ -1,12 +1,8 @@
 {
-
     "status": "ok",
     "totalResults": 4,
-    -
     "articles": [
-        -
         {
-            -
             "source": {
                 "id": "the-wall-street-journal",
                 "name": "The Wall Street Journal"
@@ -19,9 +15,7 @@
             "publishedAt": "2024-11-17T02:40:48Z",
             "content": "Warner Bros. Discovery and the NBA have settled their lawsuit with Disney agreeing to license the TNT show \"Inside the NBA\" featuring Charles Barkley and Shaquille O'Neal to ESPN and ABC starting nex… [+819 chars]"
         },
-        -
         {
-            -
             "source": {
                 "id": "the-wall-street-journal",
                 "name": "The Wall Street Journal"
@@ -34,9 +28,7 @@
             "publishedAt": "2024-11-15T19:56:00Z",
             "content": "Boston Fed President Susan Collins. - Andrew Harrer/Bloomberg News\r\nStocks fell Friday, following a solid retail-sales report that could bolster the case that the economy is strong and may not need s… [+3587 chars]"
         },
-        -
         {
-            -
             "source": {
                 "id": "the-wall-street-journal",
                 "name": "The Wall Street Journal"
@@ -49,9 +41,7 @@
             "publishedAt": "2024-10-23T03:33:32Z",
             "content": "Joanna Stern, writing for The Wall Street Journal (News+):\n\n\n If you’re expecting AI fireworks, prepare for AI … sparklers. Back\nin June, at the company’s annual developers conference, executives\nsho… [+1539 chars]"
         },
-        -
         {
-            -
             "source": {
                 "id": "the-wall-street-journal",
                 "name": "The Wall Street Journal"
@@ -65,5 +55,4 @@
             "content": "The airline industrys biggest names donned gowns and tuxedos and filed into a Manhattan ballroom Friday for a night of cocktails and fretting about the future of Boeing.One group was conspicuously ab… [+6565 chars]"
         }
     ]
-
 }
