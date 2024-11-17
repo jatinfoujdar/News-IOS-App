@@ -4,63 +4,65 @@ struct CardView: View {
     let article: Article
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
-                ZStack(alignment: .bottom) {
-                
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 150)
-                            .clipped()
-                            .cornerRadius(10)
-                    } placeholder: {
-                        Color.gray.opacity(0.3)
-                            .frame(height: 150)
-                            .cornerRadius(10)
-                    }
-                    
+        NavigationLink(destination: ArticleDetailView(article: article)) {
+            VStack(alignment: .leading, spacing: 10) {
+                if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
+                    ZStack(alignment: .bottom) {
                    
-                    VStack {
-             
-                        Text(article.title)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .lineLimit(1)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(Color.black.opacity(0.6))
-                            .cornerRadius(8)
-                            .padding(.top, 8)
-                        
-        
+                        AsyncImage(url: url) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 150)
+                                .clipped()
+                                .cornerRadius(10)
+                        } placeholder: {
+                            Color.gray.opacity(0.3)
+                                .frame(height: 150)
+                                .cornerRadius(10)
+                        }
                         
                        
-                        Text(article.description)
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                            .lineLimit(2)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(Color.black.opacity(0.6))
-                            .cornerRadius(8)
-                            .padding(.bottom, 8)
+                        VStack {
+                        
+                            Text(article.title)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .lineLimit(1)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.black.opacity(0.6))
+                                .cornerRadius(8)
+                                .padding(.top, 8)
+                            
+                        
+                    
+                            Text(article.description)
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                                .lineLimit(2)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.black.opacity(0.6))
+                                .cornerRadius(8)
+                                .padding(.bottom, 8)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
+                } else {
+                    // Fallback for missing image
+                    Color.gray.opacity(0.3)
+                        .frame(height: 250)
+                        .cornerRadius(10)
                 }
-            } else {
-            
-                Color.gray.opacity(0.3)
-                    .frame(height: 250)
-                    .cornerRadius(10)
             }
+            .padding()
+            .background(Color(.systemBackground))
+            .cornerRadius(15)
+            
+            .padding(.horizontal)
         }
-        .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-        .padding(.horizontal)
+        
     }
 }
 
