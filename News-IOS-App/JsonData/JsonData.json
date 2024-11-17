@@ -4,7 +4,7 @@
     "articles": [
         {
             "source": {
-                "id": "the-wall-street-journal",
+                "id": 1,
                 "name": "The Wall Street Journal"
             },
             "author": null,
@@ -17,7 +17,7 @@
         },
         {
             "source": {
-                "id": "the-wall-street-journal",
+                "id": 2,
                 "name": "The Wall Street Journal"
             },
             "author": "Nick Timiraos",
@@ -30,7 +30,7 @@
         },
         {
             "source": {
-                "id": "the-wall-street-journal",
+                "id": 3,
                 "name": "The Wall Street Journal"
             },
             "author": "John Gruber",
@@ -43,7 +43,7 @@
         },
         {
             "source": {
-                "id": "the-wall-street-journal",
+                "id": 4,
                 "name": "The Wall Street Journal"
             },
             "author": "Sharon Terlep",
