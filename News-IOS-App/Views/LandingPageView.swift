@@ -2,29 +2,45 @@ import SwiftUI
 
 struct LandingPageView: View {
     @State private var currentIndex = 0
-    let images = ["image1", "image2", "image3", "image4", "image5"]
+    let images = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
     var body: some View {
-        VStack {
-            // Carousel of images
-            TabView(selection: $currentIndex) {
-                ForEach(images.indices, id: \.self) { index in
-                    Image(images[index])
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(10)
-                        .scaleEffect(index == currentIndex ? 1.2 : 0.8)
-                }
+        ZStack {
+           
+            ForEach(images.indices, id: \.self) { index in
+                Image(images[index])
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(10)
+                    .frame(width: 150, height: 150)
+                    .position(x: CGFloat(index) * 160 + 80, y: 300)
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
+         
+            Image(images[currentIndex])
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(10)
+                .frame(width: 200, height: 200)
+                .scaleEffect(1.2)
+                .shadow(radius: 10)
+                .onTapGesture {
+                    currentIndex = (currentIndex + 1) % images.count
+                }
             
-            // Text heading
-            Text("Explore Your News Flasher")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .padding(.vertical, 20)
+         
+            VStack {
+                Text("Explore Your News Flasher")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+                    .padding(.top, 40)
+                Spacer()
+            }
+            .padding(.horizontal)
         }
+        .edgesIgnoringSafeArea(.all)
+        .background(Color.black)
     }
 }
 
