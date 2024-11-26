@@ -6,7 +6,7 @@ struct LandingPageView: View {
     
     var body: some View {
         ZStack {
-           
+         
             ForEach(images.indices, id: \.self) { index in
                 Image(images[index])
                     .resizable()
@@ -16,7 +16,7 @@ struct LandingPageView: View {
                     .position(x: CGFloat(index) * 160 + 80, y: 300)
             }
             
-         
+       
             Image(images[currentIndex])
                 .resizable()
                 .scaledToFit()
@@ -28,7 +28,7 @@ struct LandingPageView: View {
                     currentIndex = (currentIndex + 1) % images.count
                 }
             
-         
+        
             VStack {
                 Text("Explore Your News Flasher")
                     .font(.largeTitle)
@@ -38,6 +38,21 @@ struct LandingPageView: View {
                 Spacer()
             }
             .padding(.horizontal)
+
+          
+            VStack {
+                Spacer()
+                HStack {
+                    Text("Get Started!")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+
+                }
+                .padding(.bottom, 40)
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .background(Color.black)
