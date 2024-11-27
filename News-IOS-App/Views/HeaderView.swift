@@ -10,8 +10,10 @@ struct HeaderView: View {
                 .frame(width: 24, height: 24)
 
             Spacer()
-
-           
+            Text("Breaking News")
+                .font(.title)
+                .fontWeight(.bold)
+            Spacer()
             Image("search")
                 .resizable()
                 .scaledToFit()
