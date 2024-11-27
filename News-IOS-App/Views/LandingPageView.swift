@@ -15,7 +15,6 @@ struct LandingPageView: View {
                             .scaledToFit()
                             .cornerRadius(10)
                             .frame(width: 150, height: 150)
-                        
                     }
                 }
                 .padding(.bottom,300)
@@ -23,11 +22,8 @@ struct LandingPageView: View {
             }
             .frame(height: 200)
             .onAppear {
-              
                 startImageTimer()
             }
-
-            
             Image(images[currentIndex])
                 .resizable()
                 .scaledToFit()
@@ -36,11 +32,9 @@ struct LandingPageView: View {
                 .scaleEffect(1.2)
                 .shadow(radius: 10)
                 .onTapGesture {
-                 
                     currentIndex = (currentIndex + 1) % images.count
                 }
-            
-       
+           
             VStack {
                 Text("Explore Your News Flasher")
                     .font(.largeTitle)
@@ -50,8 +44,6 @@ struct LandingPageView: View {
                 Spacer()
             }
             .padding(.horizontal)
-
-           
             VStack {
                 Spacer()
                 HStack {
@@ -68,11 +60,9 @@ struct LandingPageView: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color.black)
         .onDisappear {
-          
             timer?.invalidate()
         }
     }
-
     private func startImageTimer() {
     
         timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { _ in
