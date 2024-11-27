@@ -12,6 +12,7 @@ struct ContentView: View {
         HeaderView()
         ScrollLottie()
         CardView()
+        RecommendationView()
         Spacer()
         NavbarView()
     }

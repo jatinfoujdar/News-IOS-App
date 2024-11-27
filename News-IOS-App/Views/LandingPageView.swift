@@ -55,7 +55,6 @@ struct LandingPageView: View {
             VStack {
                 Spacer()
                 HStack {
-                    
                     Text("Get Started!")
                         .font(.headline)
                         .foregroundColor(.white)

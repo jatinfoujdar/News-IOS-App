@@ -13,7 +13,7 @@ struct ScrollLottie: View {
                     VStack {
                         LottieCard(animationName: animationName)
                     }
-                    .frame(width: 100, height: 100)
+                    .frame(width: 80, height: 80)
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
                 }
@@ -29,7 +29,7 @@ struct LottieCard: View {
     var body: some View {
         LottieView(animation: .named(animationName))
             .playbackMode(.playing(.toProgress(1, loopMode: .loop)))
-            .frame(width: 100, height: 100)
+            .frame(width: 80, height: 80)
     }
 }
 
