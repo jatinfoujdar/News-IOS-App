@@ -28,7 +28,7 @@ struct ListView: View {
                 
                 Spacer()
             }
-            .padding(.vertical, 8)
+       
         }
         .navigationTitle("News List")
     }

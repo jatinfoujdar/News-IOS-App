@@ -10,7 +10,7 @@ struct CardView: View {
                            .resizable()
                            .scaledToFill()
                            .frame(width: 330, height: 200)
-                           .cornerRadius(10)
+                           .cornerRadius(30)
                            .clipped()
                    }
                }

@@ -18,6 +18,7 @@ struct RecommendationView: View {
             .padding(.horizontal)
             .font(.title3)
             .fontWeight(.medium)
+            
             ListView()
         }
     }
