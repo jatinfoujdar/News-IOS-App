@@ -7,7 +7,6 @@ struct LandingPageView: View {
     
     var body: some View {
         ZStack {
-           
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(images.indices, id: \.self) { index in
